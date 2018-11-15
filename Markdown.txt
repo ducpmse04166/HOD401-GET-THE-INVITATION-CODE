@@ -1,0 +1,15 @@
+Go to https://www.hackthebox.eu
+Go to https://www.hackthebox.eu/invite
+Inspect element
+Find a script with source as: /js/inviteapi.min.js
+Go to https://www.hackthebox.eu/js/inviteapi.min.js
+Copy "makeInviteCode"
+Go to https://www.hackthebox.eu/invite console
+Type makeInviteCode()
+Find data dropdown and copy value of "data:"
+Decode the copied value from ROT13 to normal text format (this will get the message "in order to generate an invite code, make a POST request to api/invite/generate.)
+Open terminal
+Type curl -XPOST https://www.hackthebox.eu/api/invite/generate
+Decode the value of "Code:" from Base-64 to normal text
+The result is the invite code
+Use it at https://www.hackthebox.eu/invite
